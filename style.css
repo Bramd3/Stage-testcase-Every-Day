@@ -132,19 +132,21 @@ main {
 .hero-stage {
   position: relative;
   max-width: 1400px;
-  min-height: calc(100vh - 140px);
+  height: 680px;
   margin: 0 auto;
-  padding-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .eyebrow {
   position: absolute;
-  top: 20px;
-  left: 92px;
+  top: 0;
+  left: 80px;
   z-index: 2;
   display: inline-flex;
   align-items: center;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
   background: var(--accent);
   color: white;
@@ -156,48 +158,52 @@ main {
 .floating-card {
   position: absolute;
   margin: 0;
-  border-radius: 20px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 .floating-card--top {
-  top: 40px;
+  top: 50%;
   left: 50%;
-  width: min(100%, 280px);
-  height: 330px;
-  transform: translateX(-50%);
+  width: 260px;
+  height: 280px;
+  transform: translate(-50%, -50%);
+  z-index: 5;
 }
 
 .floating-card--left {
-  left: 12%;
-  top: 320px;
-  width: 220px;
-  height: 170px;
+  left: 45px;
+  top: 50%;
+  width: 180px;
+  height: 160px;
+  transform: translateY(-50%);
+  z-index: 4;
 }
 
 .floating-card--right {
-  right: 10%;
-  bottom: 60px;
-  width: 240px;
-  height: 160px;
+  right: 50px;
+  bottom: 80px;
+  width: 220px;
+  height: 150px;
+  z-index: 3;
 }
 
 .hero-copy {
   position: absolute;
   left: 50%;
-  top: 280px;
-  z-index: 3;
-  width: min(100%, 700px);
-  transform: translateX(-50%);
+  top: 50%;
+  z-index: 6;
+  width: min(100%, 680px);
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
 .hero-copy h1 {
   margin: 0;
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  line-height: 1.1;
-  letter-spacing: -0.06em;
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.05em;
   font-weight: 800;
   overflow-wrap: break-word;
 }
@@ -212,10 +218,26 @@ main {
 }
 
 .scroll-indicator {
-  margin-top: 50px;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 20px;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 22px;
   opacity: 0.8;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-4px);
+  }
 }
 
 .feature-section {
@@ -291,48 +313,61 @@ main {
   }
 
   .hero-stage {
-    min-height: calc(100vh - 120px);
-    padding-top: 50px;
+    height: auto;
+    min-height: 600px;
+    padding-top: 40px;
   }
 
   .eyebrow {
-    left: 50%;
-    transform: translateX(-50%);
-    top: 15px;
+    position: static;
+    display: inline-flex;
+    margin-bottom: 30px;
   }
 
   .floating-card--top {
-    top: 30px;
-    width: min(100%, 240px);
-    height: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 240px;
+    height: 260px;
+    transform: translate(-50%, -50%);
   }
 
   .floating-card--left {
     left: 5%;
-    top: 300px;
-    width: 180px;
+    top: auto;
+    bottom: auto;
+    transform: translateY(0);
+    width: 160px;
     height: 140px;
+    position: absolute;
+    top: 35%;
   }
 
   .floating-card--right {
     right: 5%;
-    bottom: 50px;
-    width: 200px;
+    bottom: auto;
+    position: absolute;
+    bottom: 25%;
+    width: 180px;
     height: 130px;
   }
 
   .hero-copy {
-    top: 250px;
-    width: min(100%, 550px);
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    margin-top: -40px;
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
   }
 
   .hero-copy p {
     font-size: 12px;
-    margin: 20px auto 0;
   }
 
   .feature-section {
@@ -379,16 +414,17 @@ main {
   }
 
   .hero-stage {
+    position: relative;
+    height: auto;
     min-height: auto;
-    padding-top: 40px;
+    padding-top: 30px;
+    display: block;
   }
 
   .eyebrow {
     position: relative;
-    left: auto;
-    transform: none;
-    margin-bottom: 30px;
     display: inline-flex;
+    margin-bottom: 25px;
   }
 
   .floating-card--top {
@@ -400,6 +436,7 @@ main {
     aspect-ratio: 16 / 12;
     transform: none;
     margin-bottom: 30px;
+    background: none;
   }
 
   .floating-card--left,
@@ -483,7 +520,7 @@ main {
   }
 
   .hero-stage {
-    padding-top: 30px;
+    padding-top: 20px;
   }
 
   .eyebrow {

@@ -50,7 +50,9 @@ main {
     ),
     linear-gradient(180deg, #040404 0%, #050505 100%);
   color: var(--text);
-  padding: 32px 40px 80px;
+  padding: 32px 40px 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .topbar {
@@ -61,6 +63,8 @@ main {
   max-width: 1400px;
   margin: 0 auto;
   font-size: 13px;
+  width: 100%;
+  padding-bottom: 40px;
 }
 
 .nav {
@@ -131,18 +135,17 @@ main {
 
 .hero-stage {
   position: relative;
+  flex: 1;
   max-width: 1400px;
-  height: 680px;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  min-height: 500px;
 }
 
 .eyebrow {
   position: absolute;
-  top: 0;
-  left: 80px;
+  top: 20px;
+  left: 15%;
   z-index: 2;
   display: inline-flex;
   align-items: center;
@@ -160,32 +163,32 @@ main {
   margin: 0;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
 }
 
 .floating-card--top {
-  top: 50%;
+  top: 0;
   left: 50%;
-  width: 260px;
-  height: 280px;
-  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 320px;
+  transform: translateX(-50%);
   z-index: 5;
 }
 
 .floating-card--left {
-  left: 45px;
+  left: 0;
   top: 50%;
-  width: 180px;
+  width: 200px;
   height: 160px;
   transform: translateY(-50%);
   z-index: 4;
 }
 
 .floating-card--right {
-  right: 50px;
+  right: 0;
   bottom: 80px;
   width: 220px;
-  height: 150px;
+  height: 140px;
   z-index: 3;
 }
 
@@ -194,16 +197,16 @@ main {
   left: 50%;
   top: 50%;
   z-index: 6;
-  width: min(100%, 680px);
+  width: min(100%, 700px);
   transform: translate(-50%, -50%);
   text-align: center;
 }
 
 .hero-copy h1 {
   margin: 0;
-  font-size: clamp(2.8rem, 6vw, 4.8rem);
-  line-height: 1.15;
-  letter-spacing: -0.05em;
+  font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
   font-weight: 800;
   overflow-wrap: break-word;
 }
@@ -219,12 +222,13 @@ main {
 
 .scroll-indicator {
   position: absolute;
-  bottom: 40px;
+  bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
   color: rgba(255, 255, 255, 0.7);
-  font-size: 22px;
+  font-size: 24px;
   opacity: 0.8;
+  z-index: 1;
   animation: bounce 2s infinite;
 }
 
@@ -233,10 +237,10 @@ main {
     transform: translateX(-50%) translateY(0);
   }
   40% {
-    transform: translateX(-50%) translateY(-8px);
+    transform: translateX(-50%) translateY(-10px);
   }
   60% {
-    transform: translateX(-50%) translateY(-4px);
+    transform: translateX(-50%) translateY(-5px);
   }
 }
 
@@ -298,9 +302,9 @@ main {
 }
 
 /* Tablet & iPad */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .hero {
-    padding: 28px 32px 70px;
+    padding: 28px 32px 0;
   }
 
   .topbar {
@@ -313,61 +317,30 @@ main {
   }
 
   .hero-stage {
-    height: auto;
-    min-height: 600px;
-    padding-top: 40px;
+    min-height: 450px;
   }
 
   .eyebrow {
-    position: static;
-    display: inline-flex;
-    margin-bottom: 30px;
+    left: 10%;
   }
 
   .floating-card--top {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     width: 240px;
-    height: 260px;
-    transform: translate(-50%, -50%);
+    height: 280px;
   }
 
   .floating-card--left {
-    left: 5%;
-    top: auto;
-    bottom: auto;
-    transform: translateY(0);
-    width: 160px;
+    width: 170px;
     height: 140px;
-    position: absolute;
-    top: 35%;
   }
 
   .floating-card--right {
-    right: 5%;
-    bottom: auto;
-    position: absolute;
-    bottom: 25%;
-    width: 180px;
-    height: 130px;
-  }
-
-  .hero-copy {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
-    width: 100%;
-    margin-top: -40px;
+    width: 190px;
+    height: 120px;
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.2rem, 5vw, 3.6rem);
-  }
-
-  .hero-copy p {
-    font-size: 12px;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
   }
 
   .feature-section {
@@ -377,16 +350,12 @@ main {
   .feature-wrap {
     gap: 60px;
   }
-
-  .feature-copy h2 {
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  }
 }
 
 /* Mobile Large */
 @media (max-width: 768px) {
   .hero {
-    padding: 20px 24px 50px;
+    padding: 20px 24px 0;
   }
 
   .topbar {
@@ -415,19 +384,24 @@ main {
 
   .hero-stage {
     position: relative;
-    height: auto;
     min-height: auto;
-    padding-top: 30px;
-    display: block;
+    padding: 30px 0;
   }
 
   .eyebrow {
     position: relative;
+    top: auto;
+    left: auto;
     display: inline-flex;
     margin-bottom: 25px;
   }
 
+  .floating-card {
+    display: none;
+  }
+
   .floating-card--top {
+    display: block;
     position: relative;
     top: auto;
     left: auto;
@@ -436,12 +410,7 @@ main {
     aspect-ratio: 16 / 12;
     transform: none;
     margin-bottom: 30px;
-    background: none;
-  }
-
-  .floating-card--left,
-  .floating-card--right {
-    display: none;
+    z-index: 1;
   }
 
   .hero-copy {
@@ -497,7 +466,7 @@ main {
 /* Mobile Small */
 @media (max-width: 480px) {
   .hero {
-    padding: 16px 16px 40px;
+    padding: 16px 16px 0;
   }
 
   .topbar {
@@ -520,7 +489,7 @@ main {
   }
 
   .hero-stage {
-    padding-top: 20px;
+    padding: 20px 0;
   }
 
   .eyebrow {

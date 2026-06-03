@@ -1,102 +1,244 @@
 <!doctype html>
-<html lang="nl">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Every Day - Testcase</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <title>Every Day - Design Recreation</title>
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23ff7a00'/><text x='50' y='60' font-size='60' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'>E</text></svg>"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23ff8b00'/><text y='.9em' font-size='60' x='50%' text-anchor='middle' font-family='sans-serif' font-weight='900' fill='white'>e</text></svg>"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "#ff8b00",
+              pagegray: "#ffffff",
+            },
+            fontFamily: {
+              sans: ["Public Sans", "sans-serif"],
+            },
+            boxShadow: {
+              soft: "0 18px 45px rgba(0, 0, 0, 0.14)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <main>
-      <section class="hero">
-        <header class="topbar">
-          <nav class="nav nav-left" aria-label="Hoofdmenu links">
+  <body class="font-sans text-white antialiased">
+    <section class="bg-black md:min-h-[970px] relative overflow-hidden">
+      <div
+        class="mx-auto max-w-[1200px] px-6 md:px-12 lg:px-[52px] pt-4 md:pt-6"
+      >
+        <header
+          class="relative flex md:grid md:grid-cols-[1fr_auto_1fr] items-center gap-4 text-[11px] font-semibold tracking-tight py-1"
+        >
+          <nav class="hidden md:flex items-center gap-10 text-white/85">
+            <a href="#" class="hover:text-white transition-colors duration-200"
+              >Menu item</a
+            >
+            <a href="#" class="hover:text-white transition-colors duration-200"
+              >Menu item</a
+            >
+            <a href="#" class="hover:text-white transition-colors duration-200"
+              >Menu item</a
+            >
+          </nav>
+
+          <div
+            class="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:justify-self-center text-center"
+          >
+            <span class="logo-wordmark">every day</span
+            ><span class="logo-reg">®</span>
+          </div>
+
+          <div class="ml-auto flex items-center gap-4 md:gap-8">
+            <nav class="hidden md:flex items-center gap-10 text-white/85">
+              <a
+                href="#"
+                class="hover:text-white transition-colors duration-200"
+                >Menu item</a
+              >
+              <a
+                href="#"
+                class="hover:text-white transition-colors duration-200"
+                >Menu item</a
+              >
+            </nav>
+            <button class="btn-contact hidden md:inline-flex">
+              Contact
+              <span class="btn-contact-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 2l3 3-3 3" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </button>
+            <!-- Hamburger: alleen mobiel -->
+            <button
+              class="hamburger md:hidden"
+              id="menu-toggle"
+              aria-label="Menu openen"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </header>
+
+        <!-- Mobiel fullscreen menu -->
+        <div class="mobile-menu" id="mobile-menu" inert>
+          <div class="mobile-menu-header">
+            <span class="mobile-menu-logo"
+              >every day<sup class="mobile-menu-logo-reg">®</sup></span
+            >
+            <button
+              class="mobile-menu-close"
+              id="menu-close"
+              aria-label="Menu sluiten"
+            >
+              ×
+            </button>
+          </div>
+          <nav class="mobile-menu-nav">
+            <a href="#">Menu item</a>
+            <a href="#">Menu item</a>
             <a href="#">Menu item</a>
             <a href="#">Menu item</a>
             <a href="#">Menu item</a>
           </nav>
-
-          <a class="brand" href="#" aria-label="Every Day home">
-            every day<sup>®</sup>
-          </a>
-
-          <div class="nav nav-right">
-            <a href="#">Menu item</a>
-            <a href="#">Menu item</a>
-            <a class="contact-btn" href="#">Contact <span>→</span></a>
-          </div>
-        </header>
-
-        <div class="hero-stage">
-          <div class="eyebrow">EVERY DAY</div>
-
-          <figure class="floating-card floating-card--left">
-            <img
-              src="images/Scherm_afbeelding%202026-02-25%20om%2016.06.44.png"
-              alt="Moodboard en printontwerpen op een metalen raster"
-            />
-          </figure>
-
-          <figure class="floating-card floating-card--top">
-            <img
-              src="images/Scherm_afbeelding%202026-02-25%20om%2016.06.19.png"
-              alt="Man aan een laptop in een donkere lounge"
-            />
-          </figure>
-
-          <figure class="floating-card floating-card--right">
-            <img
-              src="images/Scherm_afbeelding%202026-02-25%20om%2016.06.05.png"
-              alt="Presentatie met een vrouw die een scherm aanwijst"
-            />
-          </figure>
-
-          <div class="hero-copy">
-            <h1>De plek waar ambitie en talent samenkomen</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-
-          <div class="scroll-indicator" aria-hidden="true">↓</div>
+          <button class="btn-contact">
+            Contact
+            <span class="btn-contact-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 2l3 3-3 3" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
         </div>
-      </section>
 
-      <section class="feature-section">
-        <div class="feature-container">
-          <figure class="feature-image">
-            <img
-              src="images/Scherm_afbeelding%202026-02-25%20om%2016.08.42.png"
-              alt="Persoon op een bank met laptop in een lounge"
-              loading="lazy"
-            />
-          </figure>
+        <div class="relative mt-10 md:mt-16 pb-10 md:pb-24 md:min-h-[680px]">
+          <span class="hero-badge">Every day</span>
 
-          <div class="feature-copy">
-            <span class="label">LABEL</span>
-            <h2>Meer dan een standaard digitaal bureau</h2>
-            <p>
+          <img
+            src="images/Scherm_afbeelding%202026-02-25%20om%2016.06.19.png"
+            alt="Creative portfolio board"
+            class="mx-auto mt-2 w-[220px] md:w-[342px] h-[210px] md:h-[304px] object-cover rounded-xl"
+          />
+
+          <img
+            src="images/Scherm_afbeelding%202026-02-25%20om%2016.06.44.png"
+            alt="Developer at desk"
+            class="hidden md:block absolute left-0 top-[330px] w-[212px] h-[192px] object-cover rounded-xl"
+          />
+
+          <img
+            src="images/Scherm_afbeelding%202026-02-25%20om%2016.06.05.png"
+            alt="Team presentation"
+            class="hidden md:block absolute right-0 top-[520px] w-[236px] h-[190px] object-cover rounded-xl"
+          />
+
+          <div class="mx-auto mt-5 md:-mt-6 text-center max-w-[620px] px-4">
+            <h1 class="hero-title">
+              De plek waar
+              <br />
+              ambitie en talent
+              <br />
+              samenkomen
+            </h1>
+            <p class="hero-paragraph">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation.
+            </p>
+            <div
+              class="mt-10 md:mt-14 text-white/80 flex items-center justify-center"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 4.5L6 7.5L9 4.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-pagegray text-black">
+      <div
+        class="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-[110px] py-14 md:py-16"
+      >
+        <div class="grid md:grid-cols-[560px_1fr] items-start gap-10 md:gap-20">
+          <img
+            src="images/Scherm_afbeelding%202026-02-25%20om%2016.08.42.png"
+            alt="People collaborating"
+            class="w-full h-[320px] md:h-[560px] object-cover rounded-2xl shadow-soft"
+            style="object-position: 80% center"
+          />
+
+          <div class="max-w-[520px] md:pt-[124px]">
+            <span
+              class="inline-flex bg-brand text-white rounded-full px-4 py-[5px] text-[10px] font-bold"
+              >Label</span
+            >
+            <h2
+              class="section-white-title mt-6 text-[44px] md:text-[46px] font-extrabold leading-[0.98] tracking-[-0.02em]"
+            >
+              Meer dan
+              <br />
+              een standaard
+              <br />
+              digitaal bureau
+            </h2>
+            <p
+              class="mt-6 text-[13px] leading-[1.55] text-black/80 font-medium"
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident.
             </p>
           </div>
         </div>
-      </section>
-    </main>
-
-    <script src="script.js"></script>
+      </div>
+    </section>
   </body>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const close = document.getElementById("menu-close");
+    const menu = document.getElementById("mobile-menu");
+
+    toggle.addEventListener("click", () => {
+      menu.classList.add("is-open");
+      menu.removeAttribute("inert");
+      document.body.style.overflow = "hidden";
+      close.focus();
+    });
+
+    close.addEventListener("click", () => {
+      menu.classList.remove("is-open");
+      menu.setAttribute("inert", "");
+      document.body.style.overflow = "";
+      toggle.focus();
+    });
+
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("is-open");
+        menu.setAttribute("inert", "");
+        document.body.style.overflow = "";
+        toggle.focus();
+      });
+    });
+  </script>
 </html>

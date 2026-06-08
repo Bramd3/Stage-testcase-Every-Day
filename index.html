@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Every Day® | Design Recreation</title>
-    <link rel="icon" href="images/download.jpg" />
+    <link rel="icon" href="images/logo.jpg" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -34,7 +34,7 @@
         <header
           class="relative flex md:grid md:grid-cols-[1fr_auto_1fr] items-center gap-4 text-[11px] font-semibold tracking-tight py-1"
         >
-          <nav class="hidden md:flex items-center gap-10 text-white/85">
+          <nav class="hidden md:flex items-center gap-6 text-white/85">
             <a href="#" class="hover:text-white transition-colors duration-200"
               >Menu item</a
             >
@@ -49,12 +49,11 @@
           <div
             class="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:justify-self-center text-center"
           >
-            <span class="logo-wordmark">every day</span
-            ><span class="logo-reg">®</span>
+            <img src="images/logo.svg" alt="every day" class="h-8 w-auto" />
           </div>
 
           <div class="ml-auto flex items-center gap-4 md:gap-8">
-            <nav class="hidden md:flex items-center gap-10 text-white/85">
+            <nav class="hidden md:flex items-center gap-6 text-white/85">
               <a
                 href="#"
                 class="hover:text-white transition-colors duration-200"
@@ -68,22 +67,29 @@
             </nav>
             <button class="btn-contact hidden md:inline-flex">
               Contact
-              <span class="btn-contact-icon"
-                ><svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
+              <span class="btn-contact-icon">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
                   fill="none"
-                  aria-hidden="true"
+                 aria-hidden="true"
                 >
                   <path
-                    d="M3 2l3 3-3 3"
-                    stroke="currentColor"
-                    stroke-width="1.75"
+                    d="M5 12H18"
+                    stroke="#173843"
+                    stroke-width="1.9"
                     stroke-linecap="round"
-                    stroke-linejoin="round"
-                  /></svg
-              ></span>
+                  />
+                <path
+                  d="M13 7L18 12L13 17"
+                  stroke="#173843"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                </svg>
+              </span>
             </button>
             <!-- Hamburger: alleen mobiel -->
             <button
@@ -121,44 +127,51 @@
           </nav>
           <button class="btn-contact">
             Contact
-            <span class="btn-contact-icon"
-              ><svg
-                width="10"
-                height="10"
-                viewBox="0 0 10 10"
+            <span class="btn-contact-icon">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
                 fill="none"
                 aria-hidden="true"
               >
-                <path
-                  d="M3 2l3 3-3 3"
-                  stroke="currentColor"
-                  stroke-width="1.75"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                /></svg
-            ></span>
+              <path
+                d="M5 12H18"
+                stroke="#173843"
+                stroke-width="1.9"
+                stroke-linecap="round"
+              />
+              <path
+                d="M13 7L18 12L13 17"
+                stroke="#173843"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              </svg>
+            </span>
           </button>
         </div>
 
-        <div class="relative mt-10 md:mt-16 pb-10 md:pb-24 md:min-h-[680px]">
+        <div class="relative mt-8 md:mt-16 pb-10 md:pb-20 md:min-h-[480px]">
           <span class="hero-badge">Every day</span>
 
           <img
-            src="images/Scherm_afbeelding%202026-02-25%20om%2016.06.19.png"
+            src="images/hero-portfolio.png"
             alt="Creative portfolio board"
-            class="mx-auto mt-2 w-[220px] md:w-[342px] h-[210px] md:h-[304px] object-cover rounded-xl"
+            class="mx-auto mt-2 w-[220px] md:w-[365px] h-[210px] md:h-[304px] object-cover rounded-xl"
           />
 
           <img
-            src="images/Scherm_afbeelding%202026-02-25%20om%2016.06.44.png"
+            src="images/hero-developer.png"
             alt="Developer at desk"
-            class="hidden md:block absolute left-0 top-[330px] w-[212px] h-[192px] object-cover rounded-xl"
+            class="hidden md:block absolute left-0 top-[340px] w-[250px] h-[204px] object-cover rounded-xl"
           />
 
           <img
-            src="images/Scherm_afbeelding%202026-02-25%20om%2016.06.05.png"
+            src="images/hero-presentatie.png"
             alt="Team presentation"
-            class="hidden md:block absolute right-0 top-[520px] w-[236px] h-[190px] object-cover rounded-xl"
+            class="hidden md:block absolute right-0 top-[530px] w-[236px] h-[190px] object-cover rounded-xl"
           />
 
           <div class="mx-auto mt-5 md:-mt-6 text-center max-w-[620px] px-4">
@@ -184,13 +197,19 @@
                 fill="none"
                 aria-hidden="true"
               >
-                <path
-                  d="M3 4.5L6 7.5L9 4.5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+              <path
+                d="M6 2V8"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M3 5L6 8L9 5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
               </svg>
             </div>
           </div>
@@ -200,14 +219,14 @@
 
     <section class="bg-pagegray text-black">
       <div
-        class="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-[110px] py-14 md:py-16"
+        class="mx-auto max-w-[1280px] px-6 md:px-12 lg:px-[110px] pt-[96px] md:pt-[104px] pb-14 md:pb-16"
       >
         <div class="grid md:grid-cols-[560px_1fr] items-start gap-10 md:gap-20">
           <img
-            src="images/Scherm_afbeelding%202026-02-25%20om%2016.08.42.png"
+            src="images/samenwerking.png"
             alt="People collaborating"
             class="w-full h-[320px] md:h-[560px] object-cover rounded-2xl shadow-soft"
-            style="object-position: 80% center"
+            style="object-position: 82% center"
           />
 
           <div class="max-w-[520px] md:pt-[124px]">
@@ -216,7 +235,7 @@
               >Label</span
             >
             <h2
-              class="section-white-title mt-6 text-[44px] md:text-[46px] font-extrabold leading-[0.98] tracking-[-0.02em]"
+              class="section-white-title mt-6 text-[44px] md:text-[46px] font-bold leading-[0.98] tracking-[-0.02em]"
             >
               Meer dan
               <br />
